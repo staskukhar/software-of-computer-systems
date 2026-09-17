@@ -1,17 +1,9 @@
-using Core.Formatting;
 using Core.Models;
 
 namespace Core.Tests.EpressionProcessor;
 
-public class NegativeSignTests
+public class NegativeSignTests : ExpressionProcessorTestsBase
 {
-    private ExpressionProcessor _processor;
-
-    public NegativeSignTests()
-    {
-        _processor = new ExpressionProcessor();
-    }
-
     [Theory]
     [InlineData("-5")]
     [InlineData("-5+3")]

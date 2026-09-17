@@ -1,17 +1,9 @@
-﻿using Core.Formatting;
-using Core.Models;
+﻿using Core.Models;
 
 namespace Core.Tests.EpressionProcessor;
 
-public class SimpleExpressionTests
+public class SimpleExpressionTests : ExpressionProcessorTestsBase
 {
-    private ExpressionProcessor _processor;
-
-    public SimpleExpressionTests()
-    {
-        _processor = new ExpressionProcessor();
-    }
-
     [Theory]
     [InlineData("1+1")]
     [InlineData("1+8.5")]

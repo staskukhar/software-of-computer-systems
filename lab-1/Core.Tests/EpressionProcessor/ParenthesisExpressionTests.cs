@@ -1,17 +1,9 @@
-using Core.Formatting;
 using Core.Models;
 
 namespace Core.Tests.EpressionProcessor;
 
-public class ParenthesisExpressionTests
+public class ParenthesisExpressionTests : ExpressionProcessorTestsBase
 {
-    private ExpressionProcessor _processor;
-
-    public ParenthesisExpressionTests()
-    {
-        _processor = new ExpressionProcessor();
-    }
-
     [Theory]
     [InlineData("(1+2)")]
     [InlineData("((1+2)*3)")]

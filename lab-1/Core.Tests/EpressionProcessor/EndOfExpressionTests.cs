@@ -1,17 +1,9 @@
-using Core.Formatting;
 using Core.Models;
 
 namespace Core.Tests.EpressionProcessor;
 
-public class EndOfExpressionTests
+public class EndOfExpressionTests : ExpressionProcessorTestsBase
 {
-    private ExpressionProcessor _processor;
-
-    public EndOfExpressionTests()
-    {
-        _processor = new ExpressionProcessor();
-    }
-
     [Theory]
     [InlineData("1++")]
     [InlineData("1--")]

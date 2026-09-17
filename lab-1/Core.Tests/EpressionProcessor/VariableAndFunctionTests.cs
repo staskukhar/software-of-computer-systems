@@ -1,17 +1,9 @@
-using Core.Formatting;
 using Core.Models;
 
 namespace Core.Tests.EpressionProcessor;
 
-public class VariableAndFunctionTests
+public class VariableAndFunctionTests : ExpressionProcessorTestsBase
 {
-    private ExpressionProcessor _processor;
-
-    public VariableAndFunctionTests()
-    {
-        _processor = new ExpressionProcessor();
-    }
-
     [Theory]
     [InlineData("x")]
     [InlineData("x+y")]
