@@ -4,5 +4,5 @@ namespace Core.Formatting.Abstractions;
 
 public interface IExpressionProcessor
 {
-     ExpressionValidationResult ValidateExpression(string expression, bool returnOnError);
+     ExpressionValidationResult ValidateExpression(string expression, bool returnOnError, bool minify = false);
 }

@@ -8,8 +8,11 @@ namespace Core.Formatting;
 public class ExpressionProcessor
     : IExpressionProcessor
 {
-    public ExpressionValidationResult ValidateExpression(string expression, bool returnOnError)
+    public ExpressionValidationResult ValidateExpression(string expression, bool returnOnError, bool minify = false)
     {
+        if (minify)
+            expression = Minify(expression);
+
         Dictionary<int, string> errors = [];
         TokenState state = TokenState.Default;
         StringBuilder buffer = new StringBuilder();
@@ -67,6 +70,9 @@ public class ExpressionProcessor
 
         return new(!errors.Any(), errors);
     }
+
+    private string Minify(string expression) =>
+        new string(expression.Where(c => !char.IsWhiteSpace(c)).ToArray());
 
     private void ChangeStateTo(ref TokenState currentState, TokenState newState, StringBuilder buffer)
     {
